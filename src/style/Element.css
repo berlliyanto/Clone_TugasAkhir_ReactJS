@@ -1,0 +1,155 @@
+:root {
+    --warna-1: #303841;
+    --warna-2: #3A4750;
+    --warna-3: #00ADB5;
+    --warna-4: #EEEEEE;
+}
+
+.button {
+    height: 2.5rem;
+    width: 8rem;
+    border-radius: 5px;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--warna-4);
+    z-index: 10;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 1px 1px rgba(129, 129, 129, 0.3);
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 50%;
+    border-radius: 5px 5px 0 0;
+    background: rgba(54, 36, 215, 0.3);
+    transition: .3s;
+    z-index: 1;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 50%;
+    border-radius: 0 0 5px 5px;
+    background: rgba(54, 36, 215, 0.3);
+    transition: .3s;
+    z-index: 1;
+}
+
+.button:hover::before {
+    width: 100%;
+}
+
+.button:hover::after {
+    width: 100%;
+}
+
+.button-primary {
+    background-color: rgb(0, 153, 255);
+}
+
+.button-success {
+    background-color: rgb(0, 255, 106);
+}
+
+.button-secondary {
+    background-color: rgb(147, 147, 147);
+}
+
+.button-alert {
+    background-color: rgb(248, 62, 46);
+}
+
+.button-dark {
+    background-color: var(--warna-2);
+}
+
+.button-cyan {
+    background-color: var(--warna-3);
+}
+
+.button-light {
+    background-color: var(--warna-4);
+}
+
+.input {
+    position: relative;
+    height: 3rem;
+    width: 20rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-radius: 10px;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+    border: none;
+    background-color: var(--warna-4);
+    color: var(--light);
+}
+
+.input::placeholder {
+    font-size: 1rem;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px 3px rgba(83, 83, 83, 0.3);
+}
+
+.select {
+    height: 3rem;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+    border: none;
+    background-color: var(--warna-4);
+    border-radius: 10px;
+}
+
+.select:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px 3px rgba(83, 83, 83, 0.3);
+}
+
+.option{
+    background-color: var(--warna-4);
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: -1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}

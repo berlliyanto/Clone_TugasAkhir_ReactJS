@@ -1,0 +1,87 @@
+:root {
+    --warna-1: #303841;
+    --warna-2: #3A4750;
+    --warna-3: #00ADB5;
+    --warna-4: #EEEEEE;
+}
+
+main#landing{
+    position: relative;
+    background-image: url('/images/bg_landing.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main#landing .welcome{
+    padding-top: 30px;
+    font-family: 'Poppins-Bold', sans-serif;
+    font-size: 5rem;
+    letter-spacing: 5px;
+    text-align: center;
+    color: var(--warna-4);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fade-up 1s ease-in-out forwards;
+}
+
+main#login{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main#login h1{
+    font-family: 'Poppins-Bold', sans-serif;
+    font-size: 4rem;
+    color: var(--warna-4);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fade-up 1s ease-in-out forwards;
+}
+
+main#register{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main#register h1{
+    font-family: 'Poppins-Bold', sans-serif;
+    font-size: 4rem;
+    color: var(--warna-4);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fade-up 1s ease-in-out forwards;
+}
+
+main#home{
+    background-color: var(--warna-4);
+    width: 100%;
+}
+
+
+/* Animation */
+@keyframes fade-up {
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
