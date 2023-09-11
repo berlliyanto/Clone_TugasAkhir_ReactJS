@@ -5,17 +5,17 @@ import Divider from "../Elements/Divider/Divider";
 import InputLabel from "../Elements/Input/Input-Label";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
 import { loginUserError, loginUserSuccess } from "../../redux/slices/authSlice";
 import { login } from "../../services/auth.service";
+import { useNavigate } from "react-router-dom";
 
 const FormLogin = (props) => {
+    const navigate = useNavigate();
     const usernameRef = useRef(null);
     const errorMessage = useRef(null);
 
     const dispatch = useDispatch();
     const errorAuth = useSelector((state) => state.auth.error);
-    console.log(errorAuth);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -32,6 +32,7 @@ const FormLogin = (props) => {
                     errorMessage.current.style.opacity = 0;
                 }, 5000);
             }else{
+                console.log("berhasil login")
                 const authorization = {
                     name: response.data.data.name,
                     otoritas: response.data.data.otoritas,
@@ -39,7 +40,7 @@ const FormLogin = (props) => {
                 };
                 localStorage.setItem('auth', JSON.stringify(authorization));
                 dispatch(loginUserSuccess(authorization));
-                window.location.href = "/home";
+                navigate('/home')
             }
         })
     }

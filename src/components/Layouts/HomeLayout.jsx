@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import { getEnergy, getMachineStatus, getOEE, getProductHome } from "../../services/home.service";
-import { useSelector } from "react-redux";
 
 import Wrap, { BodyWrap, FooterWrap, HeaderWrap } from "../Fragments/Wrap";
 import ActiveMachine from "../Elements/ActiveMachine/ActiveMachine";
 import { faCheck, faClose } from "@fortawesome/free-solid-svg-icons";
 import LineChart from "../Elements/Chart/LineChart";
 import CardHome from "../Fragments/CardHome";
+import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const HomeLayout = () => {
-    const token = useSelector((state) => state.auth.user.token);
+    const navigate = useNavigate();
+    let token = "";
     const [product, setProduct] = useState([]);
     const [status, setStatus] = useState([]);
     const [power, setPower] = useState([]);
@@ -39,6 +41,13 @@ const HomeLayout = () => {
         "Availability : ",
         "OEE : "
     ];
+    useEffect(() => {
+        if(localStorage.getItem('auth')){
+            token = JSON.parse(localStorage.getItem('auth')).token;
+        }else{
+            navigate('/login');
+        }
+    })
 
     useEffect(() => {
         const interval = setInterval(() => {

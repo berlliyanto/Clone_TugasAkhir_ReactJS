@@ -7,11 +7,13 @@ import { useLogin } from "../hooks/useLogin";
 import HomeLayout from "../components/Layouts/HomeLayout";
 import SideBar from "../components/Fragments/SideBar";
 import PopUpLogout from "../components/Fragments/PopUpLogout";
+import { useNavigate } from "react-router-dom";
 
 
 
 function HomePage() {
-    useLogin();
+    const navigate = useNavigate();
+    useLogin(navigate);
     return (
         <Fragment>
             <NavBar />

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react"
 import jwt_decode from "jwt-decode";
 
-export const useLogin = () => {
+export const useLogin = (navigate) => {
     const [isAuth, setIsAuth] = useState(false);
     useEffect(() => {
         const auth = JSON.parse(localStorage.getItem('auth'));
@@ -12,14 +12,14 @@ export const useLogin = () => {
             if (isTokenExpired) {
                 console.log("Token telah kedaluwarsa");
                 setIsAuth(false);
-                window.location.href = '/login';
+                navigate('/login');
             } else {
                 console.log("Token masih berlaku");
                 setIsAuth(true);
             }
         }else{
             setIsAuth(false);
-            window.location.href = '/login';
+            navigate('/login');
         }
 
     }, [])

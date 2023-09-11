@@ -4,8 +4,15 @@ import { faDesktop } from '@fortawesome/free-solid-svg-icons';
 import SideLink from "../Elements/SideLink/SIdeLink";
 
 const SideBar = () => {
-    const name = useSelector((state) => state.auth.user.name);
-    const role = useSelector((state) => state.auth.user.otoritas);
+    // const name = useSelector((state) => state.auth.user.name);
+    // const role = useSelector((state) => state.auth.user.otoritas);
+    let name = "";
+    let role = ""
+    if(localStorage.getItem('auth')){
+        name = JSON.parse(localStorage.getItem('auth')).name;
+        role = JSON.parse(localStorage.getItem('auth')).otoritas;
+    }
+
     const sideMenu = [
         {
             text: "Machine 1",

@@ -5,6 +5,15 @@
     --warna-4: #EEEEEE;
 }
 
+#error-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100vh;
+}
+
 main#landing{
     position: relative;
     background-image: url('/images/bg_landing.jpg');
