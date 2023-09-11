@@ -145,3 +145,85 @@ body {
 	overflow-x: hidden;
 	box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+	background-color: var(--warna-4);
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--warna-2);
+	border-radius: 20px;
+	transition: 0.3s;
+}
+
+/* Responsive */
+
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+	header.landing-nav .hamburger-menu {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	header.landing-nav .hamburger-menu {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px){
+	header.landing-nav .nav-links{
+		display: none;
+	}
+}
+
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	header.landing-nav .nav-links{
+		display: flex;
+	}
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+	#root main#landing .welcome{
+		font-size: 3rem;
+	}
+
+	.form-validate .input {
+		width: 19rem;
+	}
+
+	#root main#home{
+		height: auto;
+		overflow: auto;
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+		'topleftwrap' 
+		'botleftwrap' 
+		'bigwrap';
+	}
+	#root .big-wrap h2{
+		margin-top: 30px;
+		text-align: center;
+	}
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {}

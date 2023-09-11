@@ -7,14 +7,11 @@ import { useLogin } from "../hooks/useLogin";
 import HomeLayout from "../components/Layouts/HomeLayout";
 import SideBar from "../components/Fragments/SideBar";
 import PopUpLogout from "../components/Fragments/PopUpLogout";
-import { getProductHome } from "../services/home.service";
+
 
 
 function HomePage() {
-    const auth = useLogin();
-    useEffect(() => {
-
-    }, [])
+    useLogin();
     return (
         <Fragment>
             <NavBar />

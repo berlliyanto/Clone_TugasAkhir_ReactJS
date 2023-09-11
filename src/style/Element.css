@@ -89,7 +89,7 @@
 }
 
 .button-cyan {
-    background-color: var(--warna-3);
+    background-color: #00cdd7;
 }
 
 .button-light {
@@ -152,4 +152,58 @@
     justify-content: center;
     align-items: center;
     transition: 0.3s;
+}
+
+/* Wrap */
+
+.wrap .header{
+    height: 30px;
+    width:  100%;
+    text-align: center;
+    animation: fade-left 1s ease-in-out forwards;
+}
+
+.wrap .header h1{
+    font-size: 2rem;
+    color: var(--warna-1);
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.wrap .body{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    animation: fade-left 1s ease-in-out forwards;
+}
+
+.wrap .body .active-machine{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.wrap .body .status{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.wrap .body h4{
+    font-size: 1.3rem;
+}
+
+.chart{
+    margin-top: 20px;
+    height: 250px;
+    width: 100%;
+    animation: fade-left 1s ease-in-out forwards;
 }

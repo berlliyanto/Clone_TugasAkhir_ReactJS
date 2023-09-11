@@ -68,8 +68,21 @@ main#register h1{
 }
 
 main#home{
+    box-sizing: border-box;
+    padding-top: 87px;
+    padding-left: 8px;
+    padding-right: 10px;
+    padding-bottom: 5px;
     background-color: var(--warna-4);
-    width: 100%;
+    height: 817px;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: minmax(300px, 0.5fr) 1.5fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    'topleftwrap bigwrap' 
+    'botleftwrap bigwrap';
+    gap: 1rem;
 }
 
 
@@ -83,5 +96,39 @@ main#home{
     100%{
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fade-down {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }    
+}
+
+@keyframes fade-right {
+    0%{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-left {
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
     }
 }

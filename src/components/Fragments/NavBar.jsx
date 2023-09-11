@@ -1,7 +1,5 @@
 import NavLink from "../Elements/NavLink/NavLink";
 import Hamburger from "../Elements/Hamburger/Hamburger";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignOutAlt  } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
     const showPopUpLogout = () => {
@@ -12,14 +10,21 @@ const NavBar = () => {
         popup.style.opacity = 1;
     }
 
+    const openSidebar = () => {
+        const hambuger = document.querySelector('.hamburger-menu');
+        const sidebar = document.querySelector('.sidebar');
+        hambuger.classList.toggle("open-sidebar");
+        console.log(sidebar.classList.toggle("sidebar-open"));
+    }
+
     return (
         <header className="navigation-bar home-nav">
             <div className="tag-line">
-                <Hamburger />
+                <Hamburger onClick={openSidebar} />
                 <h1>Production Monitoring System</h1>
             </div>
             <ul className="nav-links">
-                <NavLink name="Logout" href="" text={<FontAwesomeIcon icon={faSignOutAlt} />} handleLogout={showPopUpLogout} />
+                <NavLink name="Logout" href="" text="Logout" handleLogout={showPopUpLogout} />
             </ul>
         </header>
     )
