@@ -1,15 +1,15 @@
-const Wrap = ({ children, className }) => {
+const Wrap = ({ children, className ,style }) => {
     const newClassName = `wrap ${className}`;
 
     return (
-        <div className={newClassName}>{children}</div>
+        <div style={style} className={newClassName}>{children}</div>
     )
 }
 
-export const HeaderWrap = ({title}) => {
+export const HeaderWrap = ({title,style}) => {
     return (
         <div className="header">
-            <h1>{title}</h1>
+            <h1 style={style}>{title}</h1>
         </div>
     )
 }

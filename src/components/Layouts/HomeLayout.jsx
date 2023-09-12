@@ -6,11 +6,12 @@ import ActiveMachine from "../Elements/ActiveMachine/ActiveMachine";
 import { faCheck, faClose } from "@fortawesome/free-solid-svg-icons";
 import LineChart from "../Elements/Chart/LineChart";
 import CardHome from "../Fragments/CardHome";
-import { redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const HomeLayout = () => {
+    const darkMode = useSelector((state)=> state.darkMode);
     const navigate = useNavigate();
     let token = "";
     const [product, setProduct] = useState([]);
@@ -54,7 +55,6 @@ const HomeLayout = () => {
             getOEE({ token }, (response) => {
                 if (response.status == 200) {
                     setOEE(response.data.data);
-                    console.log(response.data.data);
                 } else {
                     setOEE([]);
                 }
@@ -116,9 +116,9 @@ const HomeLayout = () => {
     }, [token])
 
     return (
-        <main id="home">
-            <Wrap className={"top-left-wrap"}>
-                <HeaderWrap title={"Active Machine"} />
+        <main className="home" style={{backgroundColor: darkMode? '#333e46' : '#EEEEEE'}}>
+            <Wrap style={{backgroundColor: darkMode? '#333e46' : '#FFFFFF'}} className={"top-left-wrap"}>
+                <HeaderWrap style={{color: darkMode? 'white' : '#303841'}} title={"Active Machine"} />
                 <BodyWrap>
                     {
                         status.map((item, index) => {
@@ -126,19 +126,26 @@ const HomeLayout = () => {
                                 title={`Machine ${item.machine_id}`}
                                 style={item.status === 1 ? { backgroundColor: "green" } : { backgroundColor: "red" }}
                                 status={item.status === 1 ? "Active" : "Not Active"}
-                                icon={item.status === 1 ? faCheck : faClose} />
+                                icon={item.status === 1 ? faCheck : faClose}
+                                fontColor={{ color: darkMode? 'white' : '#303841' }}
+                                />
                         })
                     }
                 </BodyWrap>
                 <FooterWrap />
             </Wrap>
-            <Wrap className={"bot-left-wrap"}>
-                <HeaderWrap title={"Power Usage"} />
-                <LineChart label="Power Usage" items={power} labels={waktuPower} />
+            <Wrap style={{backgroundColor: darkMode? '#333e46' : '#FFFFFF'}} className={"bot-left-wrap"}>
+                <HeaderWrap style={{color: darkMode? 'white' : '#303841'}} title={"Power Usage"} />
+                <LineChart 
+                label="Power Usage" 
+                items={power} labels={waktuPower} 
+                gridColor={darkMode? 'white' : '#303841'} 
+                labelColor={darkMode? 'white' : '#303841'}
+                />
             </Wrap>
-            <div className="big-wrap">
-                <h1>Dashboard</h1>
-                <h2>Production</h2>
+            <div className="big-wrap" style={{backgroundColor: darkMode? '#333e46' : '#FFFFFF'}}>
+                <h1 style={{color: darkMode? 'white' : ''}}>Dashboard</h1>
+                <h2 style={{color: darkMode? 'white' : ''}}>Production</h2>
                 <div className="card-home-wrap">
                     {
                         product.map((item, index) => {
@@ -157,7 +164,7 @@ const HomeLayout = () => {
                         })
                     }
                 </div>
-                <h2>OEE</h2>
+                <h2 style={{color: darkMode? 'white' : '#303841'}}>OEE</h2>
                 <div className="card-home-wrap">
                     {
                         oee.map((item, index) => {

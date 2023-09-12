@@ -8,6 +8,15 @@
 	src: url('./assets//fonts/Poppins/Poppins-Bold.ttf') format('truetype');
 }
 
+:root {
+    --warna-1: #303841;
+    --warna-2: #3A4750;
+    --warna-3: #00ADB5;
+    --warna-4: #EEEEEE;
+	--warna-5: #222a2f;
+}
+
+
 html,
 body,
 div,
@@ -137,6 +146,7 @@ q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	transition: 0.3s;
 }
 
 body {
@@ -155,6 +165,10 @@ body {
 	background: var(--warna-2);
 	border-radius: 20px;
 	transition: 0.3s;
+}
+/* Dark Mode */
+#root main .dark-mode{
+	background-color: var(--warna-1);
 }
 
 /* Responsive */
@@ -188,7 +202,7 @@ body {
 
 /* For Mobile Portrait View */
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
-	#root main#landing .welcome{
+	#root main.landing .welcome{
 		font-size: 3rem;
 	}
 
@@ -196,7 +210,7 @@ body {
 		width: 19rem;
 	}
 
-	#root main#home{
+	#root main.home{
 		height: auto;
 		overflow: auto;
 		grid-template-columns: 1fr;

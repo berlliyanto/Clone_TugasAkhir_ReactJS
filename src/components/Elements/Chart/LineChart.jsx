@@ -9,7 +9,7 @@ ChartJS.register(
     LinearScale,
 )
 
-const LineChart = ({ label, items, labels }) => {
+const LineChart = ({ label, items, labels, gridColor, labelColor }) => {
 
     let data = {
         labels: labels,
@@ -39,14 +39,29 @@ const LineChart = ({ label, items, labels }) => {
     let option = {
         maintainAspectRatio: false,
         scales: {
+            x: {
+                beginAtZero: true,
+                grid: {
+                    color: gridColor, 
+                },
+                ticks: {
+                    color: labelColor, 
+                }
+            },
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                grid: {
+                    color: gridColor,
+                },
+                ticks: {
+                    color: labelColor,
+                }
             },
 
         },
         legends: {
             labels: {
-                fontSize: 20
+                fontSize: 20,
             }
         }
     };

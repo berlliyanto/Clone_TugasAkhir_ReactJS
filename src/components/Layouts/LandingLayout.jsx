@@ -1,6 +1,6 @@
 const LandingLayouts = ({ children }) => {
     return (
-        <main id="landing">
+        <main className="landing">
             {children}
         </main>
     )

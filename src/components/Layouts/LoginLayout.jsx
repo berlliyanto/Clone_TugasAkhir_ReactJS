@@ -3,7 +3,7 @@ import FormLogin from "../Fragments/FormLogin"
 
 const LoginLayout = () => {
     return (
-        <main id="login">
+        <main className="login">
             <h1>Login</h1>
             <FormLogin/>
         </main>

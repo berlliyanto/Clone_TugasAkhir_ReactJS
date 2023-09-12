@@ -2,10 +2,10 @@ import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
 import SideLink from "../Elements/SideLink/SIdeLink";
+import Button from "../Elements/Button/Button";
 
 const SideBar = () => {
-    // const name = useSelector((state) => state.auth.user.name);
-    // const role = useSelector((state) => state.auth.user.otoritas);
+    const darkMode = useSelector((state)=> state.darkMode);
     let name = "";
     let role = ""
     if(localStorage.getItem('auth')){
@@ -30,10 +30,18 @@ const SideBar = () => {
             text: "Machine 4",
             to: ''
         },
-    ]
+    ];
+
+    const showPopUpLogout = () => {
+        const overlay = document.querySelector('.overlay');
+        const popup = document.querySelector('.popup-logout');
+        overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        overlay.style.zIndex = 1001;
+        popup.style.opacity = 1;
+    }
 
     return (
-        <aside className="sidebar">
+        <aside className="sidebar" style={{backgroundColor: darkMode? '#303841' : '#3A4750'}}>
             <div className="sidebar-content">
                 <div className="avatar">
                     <img src="/images/icon_avatar.png" alt="" />
@@ -48,6 +56,7 @@ const SideBar = () => {
                         })
                     }
                 </ul>
+                <Button buttonStyle={'button-alert'} textButton={'Logout'} onClick={showPopUpLogout} />
             </div>
         </aside>
     )
