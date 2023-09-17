@@ -24,9 +24,9 @@ const AddAccount = ({ color }) => {
         }
 
         register(data, (response) => {
-            if(response===false){
+            if (response === false) {
                 textButton = "Loading...";
-            }else{
+            } else {
                 textButton = "Add Account";
                 if (response.status == 200) {
                     window.location.href = "/account";
@@ -40,14 +40,16 @@ const AddAccount = ({ color }) => {
 
     return (
         <dialog className="dialog-acc">
-            <h6 onClick={() => document.querySelector('.dialog-acc').removeAttribute('open')}>Close</h6> 
-            <form className="form-validate" onSubmit={handleRegister} style={{ backgroundColor: 'transparent', border: 'none', backdropFilter: 'none' }}>
-                <InputLabel color={color} name="name" placeHolder="Input Name" type="text" label="Name" />
-                <InputLabel color={color} name="username" placeHolder="Input Username" type="text" label="Username" />
-                <InputLabel color={color} name="password" placeHolder="*****" type="text" label="Password" />
-                <SelectLabel color={color} name="role" id="role" optionValue={roleList} label="Role" />
-                <Button buttonStyle={"button-success"} textButton={textButton} />
-            </form>
+            <div className="dialog-content">
+                <h6 onClick={() => document.querySelector('.dialog-acc').removeAttribute('open')}>Close</h6>
+                <form className="form-validate" onSubmit={handleRegister} style={{ backgroundColor: 'transparent', border: 'none', backdropFilter: 'none' }}>
+                    <InputLabel color={color} name="name" placeHolder="Input Name" type="text" label="Name" />
+                    <InputLabel color={color} name="username" placeHolder="Input Username" type="text" label="Username" />
+                    <InputLabel color={color} name="password" placeHolder="*****" type="text" label="Password" />
+                    <SelectLabel color={color} name="role" id="role" optionValue={roleList} label="Role" />
+                    <Button buttonStyle={"button-success"} textButton={textButton} />
+                </form>
+            </div>
         </dialog>
     )
 }

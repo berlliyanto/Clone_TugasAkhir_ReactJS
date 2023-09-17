@@ -105,7 +105,7 @@ main.account {
     'title btn' 
     'list list';
     transition: .3s;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr);
     grid-template-rows: 70px 1fr;
     gap: 1rem;
 }
@@ -137,6 +137,7 @@ main.account .list-account{
     justify-content: center;
     align-items: center;
     padding: 20px;
+    overflow-x: auto;
 }
 
 /* Animation */

@@ -106,6 +106,7 @@ header.home-nav{
 }
 
 .sidebar-content .avatar img{
+    cursor: pointer;
     width: 6rem;
     height: 6rem;
 }
@@ -459,14 +460,34 @@ header.home-nav{
 }
 
 .dialog-acc{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
     border: none;
     border-radius: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-    background-color: var(--warna-2);
+    background-color: rgba(0, 0, 0, 0.3);
     transition: 0.3s;
+    z-index: 1001;
 }
 
-.dialog-acc h6{
+.dialog-acc .dialog-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 400px;
+    background-color: var(--warna-2);
+    margin: 70px auto;
+    border-radius: 10px;
+}
+
+.dialog-acc .dialog-content h6{
+    align-self: end;
+    padding-right: 30px;
+    padding-top: 30px;
     text-align: end;
     font-size: 1.3rem;
     color: var(--warna-4);
@@ -479,21 +500,40 @@ header.home-nav{
 }
 
 .dialog-edit{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
     border: none;
     border-radius: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-    background-color: var(--warna-2);
+    background-color: rgba(0, 0, 0, 0.3);
     transition: 0.3s;
+    z-index: 1001;
 }
 
-.dialog-edit h6{
-    text-align: end;
+.dialog-edit .dialog-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 400px;
+    background-color: var(--warna-2);
+    margin: 70px auto;
+    border-radius: 10px;
+}
+
+.dialog-edit .dialog-content h6{
+    align-self: end;
+    padding-right: 30px;
+    padding-top: 30px;
     font-size: 1.3rem;
     color: var(--warna-4);
     cursor: pointer;
     transition: 0.3s;
 }
 
-.dialog-edit h6:hover{
+.dialog-edit .dialog-content h6:hover{
     color: var(--warna-3);
 }

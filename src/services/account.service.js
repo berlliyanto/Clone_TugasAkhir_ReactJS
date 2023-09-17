@@ -5,7 +5,6 @@ const urlUser = "https://berli.aplikasipms.com/api/users/";
 export async function getUsers(params, callback) {
     const { token } = params;
     const headers = {
-        'Access-Control-Allow-Origin': 'http://localhost:5173',
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + token
     }
@@ -23,7 +22,6 @@ export async function getUsers(params, callback) {
 export async function getUser(params, callback) {
     const { token, id } = params;
     const headers = {
-        'Access-Control-Allow-Origin': 'http://localhost:5173',
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + token
     }
@@ -41,7 +39,6 @@ export async function getUser(params, callback) {
 export async function deleteUser(params, callback) {
     const { token , id } = params;
     const headers = {
-        'Access-Control-Allow-Origin': 'http://localhost:5173',
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + token
     }
@@ -68,7 +65,6 @@ export async function deleteUser(params, callback) {
 export async function updateUser(params, callback) {
     const { token , id, name, username, password, otoritas } = params;
     const headers = {
-        'Access-Control-Allow-Origin': 'http://localhost:5173',
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + token
     };

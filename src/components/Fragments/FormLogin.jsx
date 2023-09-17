@@ -37,6 +37,7 @@ const FormLogin = (props) => {
                     }, 5000);
                 } else {
                     const authorization = {
+                        id: response.data.data.id,
                         name: response.data.data.name,
                         otoritas: response.data.data.otoritas,
                         token: response.data.data.token,

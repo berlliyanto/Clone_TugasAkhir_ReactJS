@@ -13,7 +13,6 @@ export async function login(params,callback){
         callback(false);
         const response = await axios.post(urlLogin,data, {
             headers: {
-                'Access-Control-Allow-Origin': 'http://localhost:5173',
             }
         });
         callback(response);
@@ -34,7 +33,6 @@ export async function register(params, callback){
         callback(false);
         const response = await axios.post(urlRegister,data, {
             headers: {
-                'Access-Control-Allow-Origin': 'http://localhost:5173',
             }
         });
         callback(response);

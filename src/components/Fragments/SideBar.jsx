@@ -6,13 +6,24 @@ import Button from "../Elements/Button/Button";
 import { faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const SideBar = () => {
-    const darkMode = useSelector((state)=> state.darkMode);
-    const auth = useSelector((state)=> state.auth.user);
-    let name = auth.name;
-    let role = auth.otoritas;
-    
+    const darkMode = useSelector((state) => state.darkMode);
+    const auth = useSelector((state) => state.auth.user);
+    const [name, setName] = useState("");
+    const [role, setRole] = useState("");
+    const [id, setId] = useState("");
+
+    useEffect(() => {
+        if (auth) {
+            setName(auth.name);
+            setRole(auth.role)
+            setId(auth.id);
+        }
+    }, [])
+
 
     const sideMenu = [
         {
@@ -56,10 +67,10 @@ const SideBar = () => {
     }
 
     return (
-        <aside className="sidebar" style={{backgroundColor: darkMode? '#303841' : '#3A4750'}}>
+        <aside className="sidebar" style={{ backgroundColor: darkMode ? '#303841' : '#3A4750' }}>
             <div className="sidebar-content">
                 <div className="avatar">
-                    <img src="/images/icon_avatar.png" alt="" />
+                    <Link to={`/profile/${id}`}><img src="/images/icon_avatar.png" alt="" /></Link>
                     <h1>Welcome</h1>
                     <h2>{name}</h2>
                     <h6>{role}</h6>
@@ -67,7 +78,11 @@ const SideBar = () => {
                 <ul className="sidebar-links">
                     {
                         sideMenu.map((item, index) => {
-                            return <SideLink key={index} text={item.text} icon={<FontAwesomeIcon icon={item.icon}/>} href={item.to} />
+                            if (role === "Admin" || item.text !== "Account") {
+                                return <SideLink key={index} text={item.text} icon={<FontAwesomeIcon icon={item.icon} />} href={item.to} />;
+                            } else {
+                                return null;
+                            }
                         })
                     }
                 </ul>
