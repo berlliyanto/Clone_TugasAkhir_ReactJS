@@ -96,6 +96,48 @@ main.home{
     transition: .3s;
 }
 
+main.account {
+    box-sizing: border-box;
+    padding: 87px 10px 10px 10px;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    'title btn' 
+    'list list';
+    transition: .3s;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70px 1fr;
+    gap: 1rem;
+}
+
+main.account h1 {
+    padding-left: 20px;
+    grid-area: title;
+    align-self: center;
+    justify-self: start;
+    font-size: 2rem;
+    font-family: 'Poppins-Bold', sans-serif;
+    color: var(--warna-1);
+    text-shadow: 1px 1px 1px var(--warna-2);
+}
+
+main.account .add-account {
+    padding-right: 20px;
+    grid-area: btn;
+    align-self: center;
+    justify-self: end;
+}
+
+main.account .list-account{
+    grid-area: list;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
 /* Animation */
 @keyframes fade-up {

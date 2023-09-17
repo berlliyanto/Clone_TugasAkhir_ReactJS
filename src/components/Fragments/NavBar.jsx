@@ -16,8 +16,9 @@ const NavBar = () => {
         hambuger.classList.toggle("open-sidebar");
         console.log(sidebar.classList.toggle("sidebar-open"));
     }
-    function tes(){
+    function changeTheme(){
         dispatch(toggleDarkMode());
+        darkMode ? document.body.style.backgroundColor = '#EEEEEE' : document.body.style.backgroundColor = '#333e46';
     }
     
     return (
@@ -27,8 +28,8 @@ const NavBar = () => {
                 <h1>Production Monitoring System</h1>
             </div>
             <ul className="nav-links">
-                <Switch handleOnClick={tes} checked={darkMode} />
-                <FontAwesomeIcon color={darkMode? '#EEEEEE': 'black'} icon={faSun} />
+                <Switch handleOnChange={changeTheme} checked={darkMode} />
+                <FontAwesomeIcon color={darkMode? '#00ADB5': '#ccc'} icon={faSun} />
             </ul>
         </header>
     )

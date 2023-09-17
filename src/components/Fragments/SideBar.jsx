@@ -3,32 +3,47 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
 import SideLink from "../Elements/SideLink/SIdeLink";
 import Button from "../Elements/Button/Button";
+import { faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 
 const SideBar = () => {
     const darkMode = useSelector((state)=> state.darkMode);
-    let name = "";
-    let role = ""
-    if(localStorage.getItem('auth')){
-        name = JSON.parse(localStorage.getItem('auth')).name;
-        role = JSON.parse(localStorage.getItem('auth')).otoritas;
-    }
+    const auth = useSelector((state)=> state.auth.user);
+    let name = auth.name;
+    let role = auth.otoritas;
+    
 
     const sideMenu = [
         {
+            text: "Home",
+            to: '/home',
+            icon: faHome
+        },
+        {
             text: "Machine 1",
-            to: ''
+            to: '/Machine/1',
+            icon: faDesktop
         },
         {
             text: "Machine 2",
-            to: ''
+            to: '/Machine/2',
+            icon: faDesktop,
         },
         {
             text: "Machine 3",
-            to: ''
+            to: '/Machine/3',
+            icon: faDesktop,
         },
         {
             text: "Machine 4",
-            to: ''
+            to: '/Machine/4',
+            icon: faDesktop,
+        },
+        {
+            text: "Account",
+            to: '/account',
+            icon: faUserAlt,
         },
     ];
 
@@ -52,7 +67,7 @@ const SideBar = () => {
                 <ul className="sidebar-links">
                     {
                         sideMenu.map((item, index) => {
-                            return <SideLink key={index} text={item.text} icon={<FontAwesomeIcon icon={faDesktop}/>}/>
+                            return <SideLink key={index} text={item.text} icon={<FontAwesomeIcon icon={item.icon}/>} href={item.to} />
                         })
                     }
                 </ul>

@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 
 const HomeLayout = () => {
     const darkMode = useSelector((state)=> state.darkMode);
+    const auth = useSelector((state)=>state.auth.user);
     const navigate = useNavigate();
     let token = "";
     const [product, setProduct] = useState([]);
@@ -43,8 +44,8 @@ const HomeLayout = () => {
         "OEE : "
     ];
     useEffect(() => {
-        if(localStorage.getItem('auth')){
-            token = JSON.parse(localStorage.getItem('auth')).token;
+        if(auth){
+            token = auth.token;
         }else{
             navigate('/login');
         }

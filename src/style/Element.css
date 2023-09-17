@@ -81,6 +81,10 @@
     background-color: rgb(147, 147, 147);
 }
 
+.button-danger {
+    background-color: rgb(237, 229, 0);
+}
+
 .button-alert {
     background-color: rgb(248, 62, 46);
 }
@@ -269,4 +273,86 @@
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.loading {
+    box-sizing: border-box;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    border: 1px solid var(--warna-3);
+    animation: bounce 0.5s ease infinite alternate;
+}
+
+.loading::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    background-color: var(--warna-2);
+    animation: bounce 0.5s ease infinite alternate;
+}
+
+.table-user {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--warna-2);
+    border-radius: 10px;
+}
+
+.table-user thead {
+    background-color: var(--warna-3);
+    border-radius: 10px;
+    color: var(--warna-4);
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.table-user tbody {
+    width: 100%;
+    font-size: 1.2rem;
+    overflow: auto;
+    height: 300px;
+    border-radius: 10px;
+    color: var(--warna-2);
+    font-weight: 400;
+    transition: .3s;
+}
+
+.table-user th {
+    border-left: 1px solid var(--warna-2);
+    padding: 10px;
+}
+
+.table-user tr,
+.table-user td {
+    padding: 10px;
+    border-left: 1px solid black;
+    transition: .3s;
+}
+
+.table-user tbody tr:hover {
+    background-color: rgb(0, 215, 215);
+}
+
+/* Animations */
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
 }

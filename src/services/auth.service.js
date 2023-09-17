@@ -10,7 +10,12 @@ export async function login(params,callback){
     }
 
     try {
-        const response = await axios.post(urlLogin,data);
+        callback(false);
+        const response = await axios.post(urlLogin,data, {
+            headers: {
+                'Access-Control-Allow-Origin': 'http://localhost:5173',
+            }
+        });
         callback(response);
     } catch (error) {
         callback(error.response);
@@ -26,7 +31,12 @@ export async function register(params, callback){
     }
 
     try {
-        const response = await axios.post(urlRegister,data);
+        callback(false);
+        const response = await axios.post(urlRegister,data, {
+            headers: {
+                'Access-Control-Allow-Origin': 'http://localhost:5173',
+            }
+        });
         callback(response);
     } catch (error) {
         callback(error.response);

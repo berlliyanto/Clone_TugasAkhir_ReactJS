@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-const SideLink = ({text,icon}) => {
+const SideLink = ({text,icon,href}) => {
     return (
         <li className="sidebar-link">
-            <Link className="link">{icon}<span></span>{text}</Link>
+            <Link to={href} className="link">{icon}<span></span>{text}</Link>
         </li>
     )
 }

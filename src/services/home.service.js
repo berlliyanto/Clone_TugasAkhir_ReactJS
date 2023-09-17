@@ -9,6 +9,7 @@ const urlEnergy = "https://berli.aplikasipms.com/api//grafikEnergy";
 export async function getProductHome(params,callback){
     const token = params.token;
     const headers = {
+        'Access-Control-Allow-Origin': 'http://localhost:5173',
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + token
     }
@@ -25,6 +26,7 @@ export async function getProductHome(params,callback){
 export async function getMachineStatus(params, callback){
     const {token} = params;
     const headers = {
+        'Access-Control-Allow-Origin': 'http://localhost:5173',
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + token
     }
@@ -42,6 +44,7 @@ export async function getMachineStatus(params, callback){
 export async function getEnergy(params, callback){
     const {token} = params;
     const headers = {
+        'Access-Control-Allow-Origin': 'http://localhost:5173',
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + token
     }
@@ -58,6 +61,7 @@ export async function getEnergy(params, callback){
 export async function getOEE(params, callback){
     const {token} = params;
     const headers = {
+        'Access-Control-Allow-Origin': 'http://localhost:5173',
         'Content-Type': 'application/json',
         'Authorization': 'Basic ' + token
     }
