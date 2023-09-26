@@ -62,7 +62,7 @@ const HomeLayout = () => {
             })
         }, 1500);
         return () => clearInterval(interval);
-    })
+    },[token])
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -136,7 +136,7 @@ const HomeLayout = () => {
                 <FooterWrap />
             </Wrap>
             <Wrap style={{backgroundColor: darkMode? '#333e46' : '#FFFFFF'}} className={"bot-left-wrap"}>
-                <HeaderWrap style={{color: darkMode? 'white' : '#303841'}} title={"Power Usage"} />
+                <HeaderWrap style={{color: darkMode? 'white' : '#303841'}} title={"Power Usage (W)"} />
                 <LineChart 
                 label="Power Usage" 
                 items={power} labels={waktuPower} 
@@ -144,7 +144,7 @@ const HomeLayout = () => {
                 labelColor={darkMode? 'white' : '#303841'}
                 />
             </Wrap>
-            <div className="big-wrap" style={{backgroundColor: darkMode? '#333e46' : '#FFFFFF'}}>
+            <section className="big-wrap" style={{backgroundColor: darkMode? '#333e46' : '#FFFFFF'}}>
                 <h1 style={{color: darkMode? 'white' : ''}}>Dashboard</h1>
                 <h2 style={{color: darkMode? 'white' : ''}}>Production</h2>
                 <div className="card-home-wrap">
@@ -184,7 +184,7 @@ const HomeLayout = () => {
                         })
                     }
                 </div>
-            </div>
+            </section>
         </main>
     )
 }

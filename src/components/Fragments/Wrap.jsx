@@ -22,9 +22,9 @@ export const BodyWrap = ({children}) => {
     )
 }
 
-export const FooterWrap = () => {
+export const FooterWrap = ({children}) => {
     return (
-        <div className="footer"></div>
+        <div className="footer">{children}</div>
     )
 }
 

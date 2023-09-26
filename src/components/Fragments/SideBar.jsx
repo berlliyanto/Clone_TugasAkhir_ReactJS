@@ -19,7 +19,7 @@ const SideBar = () => {
     useEffect(() => {
         if (auth) {
             setName(auth.name);
-            setRole(auth.role)
+            setRole(auth.otoritas)
             setId(auth.id);
         }
     }, [])
@@ -33,22 +33,22 @@ const SideBar = () => {
         },
         {
             text: "Machine 1",
-            to: '/Machine/1',
+            to: '/machine1',
             icon: faDesktop
         },
         {
             text: "Machine 2",
-            to: '/Machine/2',
+            to: '/machine2',
             icon: faDesktop,
         },
         {
             text: "Machine 3",
-            to: '/Machine/3',
+            to: '/machine3',
             icon: faDesktop,
         },
         {
             text: "Machine 4",
-            to: '/Machine/4',
+            to: '/machine4',
             icon: faDesktop,
         },
         {
