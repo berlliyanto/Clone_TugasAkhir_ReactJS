@@ -33,22 +33,22 @@ const SideBar = () => {
         },
         {
             text: "Machine 1",
-            to: '/machine1',
+            to: '/machine/1',
             icon: faDesktop
         },
         {
             text: "Machine 2",
-            to: '/machine2',
+            to: '/machine/2',
             icon: faDesktop,
         },
         {
             text: "Machine 3",
-            to: '/machine3',
+            to: '/machine/3',
             icon: faDesktop,
         },
         {
             text: "Machine 4",
-            to: '/machine4',
+            to: '/machine/4',
             icon: faDesktop,
         },
         {

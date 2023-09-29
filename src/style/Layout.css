@@ -186,6 +186,179 @@ main.profile .ubah-password{
     border-radius: 10px;
 }
 
+main.machine {
+    margin-top: 87px;
+    padding: 0px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    transition: 0.3s;
+}
+
+main.machine article{
+    box-sizing: border-box;
+    width: 590px;
+    flex: 1;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+main.machine .sensor{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+main.machine .sensor .gauge{
+    width: 100%;
+}
+
+main.machine article h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+main.machine .listrik{
+    display: grid;
+    grid-template-areas: 
+    'head head' 
+    'box1 box2' 
+    'box3 box4';
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    grid-template-rows: 0.2fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 15px;
+    /* justify-items: center; */
+}
+
+.listrik h1{
+    grid-area: head;
+    justify-self: left;
+}
+
+.listrik .box{
+    height: 160px;
+    width: 100%;
+    background-color: var(--warna-3);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.listrik .box h2{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.listrik .box h6{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.listrik .volt{
+    justify-self: center;
+    grid-area: box1;
+}
+
+.listrik .current{
+    justify-self: center;
+    grid-area: box2;
+}
+
+.listrik .power{
+    justify-self: center;
+    grid-area: box3;
+}
+
+.listrik .energy{
+    justify-self: center;
+    grid-area: box4;
+}
+
+main.machine .production{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+}
+
+main.machine .production h1:first-child{
+    align-self: start;
+    font-size: 2rem;
+}
+
+main.machine .production h1{
+    align-self: start;
+}
+
+main.machine .production h4{
+    font-size: 1.3rem;
+}
+
+main.machine .production p{
+    font-size: 1.2rem;
+}
+
+.production .param {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 700;
+}
+
+.production .card-prod{
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 50%;
+    min-width: 300px;
+    height: 220px;
+    background-color: var(--warna-4);
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.production .prod h4{
+    font-size: 1.4rem;
+}
+
+.production .prod p{
+    font-size: 1.2rem;
+}
+
+main.machine .oee{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+}
+
+main.machine .oee h1{
+    align-self: start;
+    min-width: 350px;
+}
+
+main.machine .oee h1:first-child{
+    font-size: 2rem;
+}
+
+main.machine .oee .circular{
+    height: 200px;
+    width: 200px;
+}
+
 /* Animation */
 @keyframes fade-up {
     0%{

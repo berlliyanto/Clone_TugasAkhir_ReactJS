@@ -7,6 +7,7 @@ import { getUser } from "../../services/account.service";
 import { useSelector } from "react-redux";
 
 const ProfileLayout = () => {
+    const darkMode = useSelector((state) => state.darkMode);
     const id = useParams().id;
     const [isLoading, setIsLoading] = useState(false);
     const [profile, setProfile] = useState({
@@ -51,14 +52,14 @@ const ProfileLayout = () => {
         <main className="profile">
             {
                 isLoading ? <Loading /> : <Fragment>
-                    <section className="profile-container">
+                    <section className="profile-container" style={darkMode? {backgroundColor: '#303841'} : {backgroundColor : 'white'}}>
                         <img src="/images/icon_avatar.png" alt="" />
-                        <h3 className='username'>Username : {profile.username}</h3>
-                        <h3 className="name">Name : {profile.name}</h3>
-                        <h3 className="otoritas">Otoritas : {profile.otoritas}</h3>
-                        <h5 className="token">Status Token : {profile.token? 'Active' : 'Not Active'}</h5>
+                        <h3 style={darkMode? {color: 'white'} : {color : '#303841'}} className='username'>Username : {profile.username}</h3>
+                        <h3 style={darkMode? {color: 'white'} : {color : '#303841'}} className="name">Name : {profile.name}</h3>
+                        <h3 style={darkMode? {color: 'white'} : {color : '#303841'}} className="otoritas">Otoritas : {profile.otoritas}</h3>
+                        <h5 style={darkMode? {color: 'white'} : {color : '#303841'}} className="token">Status Token : {profile.token? 'Active' : 'Not Active'}</h5>
                     </section>
-                    <section className="ubah-password"></section>
+                    <section className="ubah-password" style={darkMode? {backgroundColor: '#303841'} : {backgroundColor : 'white'}}></section>
                 </Fragment>
             }
         </main>

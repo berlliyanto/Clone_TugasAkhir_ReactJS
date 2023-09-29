@@ -10,6 +10,7 @@ export const useLogin = (navigate) => {
             const decoded = jwt_decode(auth.token);
             const isTokenExpired = decoded.exp < Date.now() / 1000;
             if (isTokenExpired) {
+                alert("Token sudah kadaluwarsa, silahkan login kembali")
                 console.log("Token telah kedaluwarsa");
                 setIsAuth(false);
                 navigate('/login');
@@ -27,5 +28,3 @@ export const useLogin = (navigate) => {
 
 }
 
-// Uji Nanti
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYmVybGkiLCJpYXQiOjE2OTQzMzQyNzQsImV4cCI6MTY5NDM0MTQ3NH0.td8WOcBWNITihUprASs6c7nhuXDo3085K0O1Ez1RCRY

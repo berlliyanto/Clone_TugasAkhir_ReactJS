@@ -157,7 +157,7 @@ const HomeLayout = () => {
                                     data2={item.processed}
                                     data3={item.good}
                                     data4={item.defect}
-                                    path={item.machine_id}
+                                    path={`/machine/${item.machine_id}`}
                                     color={bgCardColor[index]} 
                                     title={titleProduct}
                                 />
@@ -176,7 +176,7 @@ const HomeLayout = () => {
                                     data2={`${item.quality * 100}%`}
                                     data3={`${item.availability * 100}%`}
                                     data4={`${item.nilaioee * 100}%`}
-                                    path={item.machine_id}
+                                    path={`/machine/${item.machine_id}`}
                                     color={bgCardColor[index]} 
                                     title={titleOEE}
                                 />
